@@ -25,17 +25,28 @@ def get_lastname():
 
 def get_firstname():
     
-    start_index = text.find('(First)\n')
-    end_index = text.find('\n\n', start_index)
+    start_index = text.find('(First)\n\n')
+    end_index = text.find('\n\nCity', start_index)
     start_string = text[start_index:end_index]
     firstname_string = start_string.split("\n\n")
-    firstname = firstname_string[0] # This is wrong
+    firstname = firstname_string[1]
 
     return firstname
+
+def get_DOB():
+    
+    start_index = text.find('DOB\n\n')
+    end_index = text.find('\n\nState/Zip', start_index)
+    start_string = text[start_index:end_index]
+    DOB_string = start_string.split("\n")
+    DOB = DOB_string[1] # This is wrong
+
+    return DOB
 
 print("Citation: " + str(get_citation()))
 print("Last Name: " + str(get_lastname()))
 print("First Name: " + str(get_firstname()))
+print("DOB: " + str(get_DOB()))
 
 
 
