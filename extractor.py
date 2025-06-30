@@ -16,7 +16,7 @@ def get_citation():
 def get_lastname():
     
     start_index = text.find('(Last)\n')
-    end_index = text.find('Address', start_index)
+    end_index = text.find('\nAddress', start_index)
     start_string = text[start_index:end_index]
     lastname_string = start_string.split("(Last)\n\n")
     lastname = lastname_string[1]
