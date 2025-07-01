@@ -1,6 +1,9 @@
 from pdfminer.high_level import extract_text
+import re
 
 text = extract_text("ticket.pdf")
+
+# Citation ID
 
 def get_citation():
 
@@ -11,6 +14,8 @@ def get_citation():
     citation = citation_string[1]
 
     return citation
+    
+# Last Name
 
 def get_lastname():
     
@@ -21,6 +26,8 @@ def get_lastname():
     lastname = lastname_string[1]
 
     return lastname
+    
+# First Name
 
 def get_firstname():
     
@@ -32,6 +39,8 @@ def get_firstname():
 
     return firstname
 
+# DOB
+
 def get_DOB():
     
     start_index = text.find('\nDOB \n')
@@ -41,6 +50,33 @@ def get_DOB():
     DOB = DOB_string[1]
 
     return DOB
+    
+# Address
+    
+def get_address():
+    
+    start_index = text.find('\nDOB \n')
+    end_index = text.find('\n\nState/Zip', start_index)
+    start_string = text[start_index:end_index]
+    _string = start_string.split(" \n")
+    DOB = DOB_string[1]
+
+    return DOB
+    
+# Address
+# City
+# State
+# Zip Code
+# DL Number
+# DL State
+# Phone Number
+# Location
+# Statute ID
+# Statute Description
+# Officer Name
+# Office Badge ID
+# Ethnicity
+# CDL
 
 print("Citation: " + str(get_citation()))
 print("Last Name: " + str(get_lastname()))
