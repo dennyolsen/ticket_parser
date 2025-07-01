@@ -1,5 +1,4 @@
 from pdfminer.high_level import extract_text
-import re
 
 text = extract_text("ticket.pdf")
 
@@ -15,7 +14,7 @@ def get_citation():
 
 def get_lastname():
     
-    start_index = text.find('(Last)\n')
+    start_index = text.find('(Last)\n\n')
     end_index = text.find('\nAddress', start_index)
     start_string = text[start_index:end_index]
     lastname_string = start_string.split("(Last)\n\n")
@@ -35,11 +34,11 @@ def get_firstname():
 
 def get_DOB():
     
-    start_index = text.find('DOB\n\n')
+    start_index = text.find('\nDOB \n')
     end_index = text.find('\n\nState/Zip', start_index)
     start_string = text[start_index:end_index]
-    DOB_string = start_string.split("\n")
-    DOB = DOB_string[1] # This is wrong
+    DOB_string = start_string.split(" \n")
+    DOB = DOB_string[1]
 
     return DOB
 
