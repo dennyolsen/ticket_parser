@@ -1,3 +1,7 @@
+# TOWN OF NEDERLAND TICKET PARSER
+# Copyright (c) 2025 Dennis Olsen, Grace Gude
+# License: MIT
+
 from pdfminer.layout import LAParams, LTTextBox
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfinterp import PDFResourceManager
