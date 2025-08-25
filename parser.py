@@ -12,7 +12,7 @@ rsrcmgr = PDFResourceManager()
 laparams = LAParams()
 device = PDFPageAggregator(rsrcmgr, laparams=laparams)
 interpreter = PDFPageInterpreter(rsrcmgr, device)
-files = ["ticket.pdf", "C00104508E.PDF"]
+files = ["modified.pdf", "modified1.pdf"]
 
 lastname = ""
 firstname = ""
