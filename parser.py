@@ -12,7 +12,7 @@ rsrcmgr = PDFResourceManager()
 laparams = LAParams()
 device = PDFPageAggregator(rsrcmgr, laparams=laparams)
 interpreter = PDFPageInterpreter(rsrcmgr, device)
-files = ["modified.pdf", "modified1.pdf"]
+files = ["test1.pdf", "test2.pdf"]
 
 lastname = ""
 firstname = ""
