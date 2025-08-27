@@ -8,9 +8,9 @@ from pdfminer.pdfinterp import PDFResourceManager
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.converter import PDFPageAggregator
 import os
+import sys
 
-# Set (walking) diretory where tickets are located
-tickets_dir = "."
+# USAGE: python3 parser.py [directory that you would like to scan, relative]
 
 rsrcmgr = PDFResourceManager()
 laparams = LAParams()
@@ -18,6 +18,11 @@ device = PDFPageAggregator(rsrcmgr, laparams=laparams)
 interpreter = PDFPageInterpreter(rsrcmgr, device)
 files = ["test1.pdf", "test2.pdf"]
 tickets = []
+args = sys.argv
+
+tickets_dir = args[1]
+
+print("Working Directory: " + tickets_dir + "\n")
 
 for root, dirs, files in os.walk(tickets_dir):
     for file in files:
