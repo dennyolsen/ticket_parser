@@ -7,12 +7,22 @@ from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfinterp import PDFResourceManager
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.converter import PDFPageAggregator
+import os
+
+# Set (walking) diretory where tickets are located
+tickets_dir = "."
 
 rsrcmgr = PDFResourceManager()
 laparams = LAParams()
 device = PDFPageAggregator(rsrcmgr, laparams=laparams)
 interpreter = PDFPageInterpreter(rsrcmgr, device)
 files = ["test1.pdf", "test2.pdf"]
+tickets = []
+
+for root, dirs, files in os.walk(tickets_dir):
+    for file in files:
+        if file.endswith(".pdf"):
+            tickets.append(file)
 
 lastname = ""
 firstname = ""
@@ -32,8 +42,8 @@ description = ""
 ethnicity = ""
 cdl = False
 
-for file in files:
-    fp = open(file, 'rb')
+for ticket in tickets:
+    fp = open(ticket, 'rb')
     pages = PDFPage.get_pages(fp)
     for page in pages:
         interpreter.process_page(page)
