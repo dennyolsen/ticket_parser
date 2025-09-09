@@ -10,7 +10,11 @@ from pdfminer.converter import PDFPageAggregator
 import os
 import sys
 
+debug = True
+
+# You must install the dependencies in requirements.txt
 # USAGE: python3 parser.py [directory that you would like to scan, relative]
+# EXAMPLE: python3 parser.py . (scans the current directory)
 
 rsrcmgr = PDFResourceManager()
 laparams = LAParams()
@@ -29,22 +33,22 @@ for root, dirs, files in os.walk(tickets_dir):
         if file.endswith(".pdf"):
             tickets.append(file)
 
-lastname = ""
-firstname = ""
-citation = ""
-dob = ""
-address = ""
-city = ""
-state = ""
-zip = ""
-dl = ""
-dlState = ""
-phone = ""
-location = ""
-date = ""
-statute = ""
-description = ""
-ethnicity = ""
+lastname = "FAIL"
+firstname = "FAIL"
+citation = "FAIL"
+dob = "FAIL"
+address = "FAIL"
+city = "FAIL"
+state = "FAIL"
+zip = "FAIL"
+dl = "FAIL"
+dlState = "FAIL"
+phone = "FAIL"
+location = "FAIL"
+date = "FAIL"
+statute = "FAIL"
+description = "FAIL"
+ethnicity = "FAIL"
 cdl = False
 
 for ticket in tickets:
