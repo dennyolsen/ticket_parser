@@ -10,7 +10,8 @@ from pdfminer.converter import PDFPageAggregator
 import os
 import sys
 
-debug = True
+debug = True # for debug
+report = True # for CSV report
 
 # You must install the dependencies in requirements.txt
 # USAGE: python3 parser.py [directory that you would like to scan, relative]
@@ -115,21 +116,23 @@ for ticket in tickets:
                         cdl = True
                     continue
 
-    print("Last Name: " + lastname)
-    print("First Name: " + firstname)
-    print("Citation#: " + citation)
-    print("DOB: " + dob)
-    print("Address: " + address)
-    print("City: " + city)
-    print("State: " + state)
-    print("Zip Code: " + zip)
-    print("DL#: " + dl)
-    print("DL State: " + dlState)
-    print("Phone#: " + phone)
-    print("Location: " + location)
-    print("Date: " + date)
-    print("Statute: " + statute)
-    print("Description: " + description)
-    print("Ethnicity: " + ethnicity)
-    print("CDL: " + str(cdl))
-    print("\n")
+    if debug:
+
+        print("Last Name: " + lastname)
+        print("First Name: " + firstname)
+        print("Citation#: " + citation)
+        print("DOB: " + dob)
+        print("Address: " + address)
+        print("City: " + city)
+        print("State: " + state)
+        print("Zip Code: " + zip)
+        print("DL#: " + dl)
+        print("DL State: " + dlState)
+        print("Phone#: " + phone)
+        print("Location: " + location)
+        print("Date: " + date)
+        print("Statute: " + statute)
+        print("Description: " + description)
+        print("Ethnicity: " + ethnicity)
+        print("CDL: " + str(cdl))
+        print("\n")
