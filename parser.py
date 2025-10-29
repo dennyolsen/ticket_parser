@@ -7,6 +7,7 @@ from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfinterp import PDFResourceManager
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.converter import PDFPageAggregator
+from pprint import pprint
 import os
 import sys
 
@@ -125,4 +126,4 @@ def parse_tickets():
     return tickets_data
 
 if debug:
-    print(parse_tickets())
+    pprint(parse_tickets())
