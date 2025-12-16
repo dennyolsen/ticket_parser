@@ -5,9 +5,9 @@ from getpass import getpass
 from parser import parse_tickets
 
 login_URL = "https://nederland.eforcesoftware.net/eFORCECommand/Account/Login.aspx?redirect=/eforcecommand/"
-visual = False
+visual = True
 
-parse_tickets()
+#parse_tickets()  commenting this out until we get it running on Windoze
 
 username = input("EForce username: ")
 password = getpass("Password: ")
@@ -29,4 +29,10 @@ password_box.send_keys(password)
 #click the submit button
 login_button.click()
 
-driver.quit()
+if visual:
+    input("Press Enter to continue...")
+
+# rms_button = driver.find_element(By.ID, "txtUsername") <===== make this work once past authentication
+
+if visual == False:
+    driver.quit()
