@@ -6,12 +6,14 @@ from parser import parse_tickets
 
 login_URL = "https://nederland.eforcesoftware.net/eFORCECommand/Account/Login.aspx?redirect=/eforcecommand/"
 visual = True
+firefox_binary = r'/usr/bin/firefox'
 
 #parse_tickets()  commenting this out until we get it running on Windoze
 
 username = input("EForce username: ")
 password = getpass("Password: ")
 options = Options()
+options.binary_location = firefox_binary
 if visual == False:
     options.add_argument("--headless")
 driver = webdriver.Firefox(options=options)
