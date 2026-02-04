@@ -32,18 +32,19 @@ password_box.send_keys(password)
 #click the submit button
 login_button.click()
 
-rms_button = driver.find_element(By.ID, "RMS_LaunchAppButton") #<===== make this work once past authentication
+rms_button = driver.find_element(By.ID, "RMS_LaunchAppButton") 
 rms_button.click()
 driver.switch_to.new_window('tab')
 driver.get("https://nederland.eforcesoftware.net/RMS/RMS/Entry/citations/citationsBegin.aspx")
 
-dropdown_button = driver.find_element(By.ID, "select2-chosen-7") #<===== make this work once past authentication
+dropdown_button = driver.find_element(By.ID, "select2-chosen-7") 
 dropdown_button.click()
 dropdown_input = driver.find_element(By.ID, "s2id_autogen7_search")
 dropdown_input.send_keys("BCSO ECITATION")
 dropdown_input.send_keys(Keys.ENTER)
 citation_number_input = driver.find_element(By.ID, "ctl00_contentBody_txtCitationNumber")
-citation_number_input.send_keys("C000XXXE")
+citation_number_input.send_keys("C00010037E")
+citation_number_input.send_keys(Keys.ENTER)
 
 
 if visual:
