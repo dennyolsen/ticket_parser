@@ -37,10 +37,9 @@ def parse_tickets():
 
     print("Tickets Directory:\n" + tickets_dir)
 
-    for root, dirs, files in os.walk(tickets_dir):
-        for file in files:
-            if file.endswith(".pdf") or file.endswith(".PDF"):
-                tickets.append(file)
+    for file in os.listdir(tickets_dir):
+        if file.endswith(".pdf") or file.endswith(".PDF"):
+            tickets.append(file)
 
     lastname = "FAIL"
     firstname = "FAIL"
@@ -63,7 +62,7 @@ def parse_tickets():
     print("Files:\n" + str(tickets))
 
     for ticket in tickets:
-        fp = open(tickets_dir + ticket, 'rb')
+        fp = open(os.path.join(tickets_dir, ticket), 'rb')
         pages = PDFPage.get_pages(fp)
         for page in pages:
             interpreter.process_page(page)
