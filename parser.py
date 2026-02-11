@@ -13,6 +13,10 @@ import sys
 import csv
 import datetime
 
+args = sys.argv
+tickets_dir = args[1]
+
+
 debug = True
 report = True # for CSV report
 
@@ -32,7 +36,6 @@ def parse_tickets():
     tickets = []
     args = sys.argv
 
-    tickets_dir = args[1]
     tickets_data = []
 
     #print("Working Directory: " + tickets_dir + "\n")
