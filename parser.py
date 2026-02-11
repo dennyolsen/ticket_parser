@@ -121,14 +121,14 @@ def parse_tickets():
                     if x == 9.0 and y == 468.4757:
                         description = text.split('Description\n')[1].split("\n")[0]
                         continue
-                    if x == 326.0 and y == 753.2617000000001:
-                        ethnicity = text.split("\n")[0]
+                    if x == 125.0 and y == 671.3687000000001:
+                        race = text.split("\n")[0]
                         continue
                     if x == 319.0 and y == 744.2617000000001:
                         if text.split("\n")[2].split(": ")[1] == "Yes":
                             cdl = True
                         continue
-            ticket_fields = [lastname, firstname, citation, dob, address, city, state, zip, dl, dlState, phone, location, date, statute, description, ethnicity] #skipping CDL for now
+            ticket_fields = [lastname, firstname, citation, dob, address, city, state, zip, dl, dlState, phone, location, date, statute, description, race] #skipping CDL for now
             tickets_data.append(ticket_fields)
     return tickets_data
 
@@ -138,6 +138,6 @@ pprint(parse_tickets)
 with open('report.csv', 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',',
                             quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    csvwriter.writerow(["lastname", "firstname", "citation", "dob", "address", "city", "state", "zip", "dl", "dlState", "phone", "location", "date", "statute", "description", "ethnicity"])
+    csvwriter.writerow(["lastname", "firstname", "citation", "dob", "address", "city", "state", "zip", "dl", "dlState", "phone", "location", "date", "statute", "description", "race"])
     for ticket in parsed_tickets:
         csvwriter.writerow(ticket)
