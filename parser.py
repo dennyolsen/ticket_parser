@@ -106,6 +106,8 @@ def parse_tickets():
                         continue
                     if x == 248.0 and y == 678.4757000000001:
                         phone = text.split('\n')[1]
+                        if phone == "NA":
+                            phone = 0000000000
                         continue
                     if x == 5.0 and y == 490.36870000000005:
                         location = str.lstrip(text).replace('\n', '')
@@ -133,7 +135,7 @@ def parse_tickets():
 parsed_tickets = parse_tickets()
 pprint(parse_tickets)
 
-with open('report' + str(datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S.f%z")) + ".csv", 'w', newline='') as csvfile:
+with open('report.csv', 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',',
                             quotechar='"', quoting=csv.QUOTE_MINIMAL)
     csvwriter.writerow(["lastname", "firstname", "citation", "dob", "address", "city", "state", "zip", "dl", "dlState", "phone", "location", "date", "statute", "description", "ethnicity"])
