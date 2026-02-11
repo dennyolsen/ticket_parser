@@ -1,7 +1,3 @@
-# TOWN OF NEDERLAND TICKET PARSER
-# Copyright (c) 2025-2026 Dennis Olsen, Grace Gude
-# License: MIT
-
 # Usage: python driver.py [directory to be scanned]
 
 from selenium import webdriver
@@ -11,13 +7,14 @@ from getpass import getpass
 from selenium.webdriver.common.keys import Keys
 from parser import parse_tickets
 import sys
+import settings
 
 args = sys.argv
 tickets_dir = args[1]
 
-login_URL = "https://nederland.eforcesoftware.net/eFORCECommand/Account/Login.aspx?redirect=/eforcecommand/"
+#login_URL = "https://nederland.eforcesoftware.net/eFORCECommand/Account/Login.aspx?redirect=/eforcecommand/"
 visual = True
-firefox_binary = r'C:\Program Files\WindowsApps\Mozilla.Firefox_147.0.3.0_x64__n80bbvh6b1yt2\VFS\ProgramFiles\Firefox Package Root\firefox.exe'
+#firefox_binary = r'C:\Program Files\WindowsApps\Mozilla.Firefox_147.0.3.0_x64__n80bbvh6b1yt2\VFS\ProgramFiles\Firefox Package Root\firefox.exe'
 tickets_data = parse_tickets()
 
 print(tickets_data)
