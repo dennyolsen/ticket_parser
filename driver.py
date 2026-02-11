@@ -7,7 +7,7 @@ from getpass import getpass
 from selenium.webdriver.common.keys import Keys
 from parser import parse_tickets
 import sys
-import settings
+from settings import *
 
 args = sys.argv
 tickets_dir = args[1]
