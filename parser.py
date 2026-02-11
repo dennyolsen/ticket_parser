@@ -38,8 +38,6 @@ def parse_tickets():
 
     tickets_data = []
 
-    #print("Working Directory: " + tickets_dir + "\n")
-
     print("Tickets Directory:\n" + tickets_dir)
 
     for file in os.listdir(tickets_dir):
@@ -136,7 +134,6 @@ def parse_tickets():
     return tickets_data
 
 parsed_tickets = parse_tickets()
-pprint(parse_tickets)
 
 with open('report.csv', 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',',
