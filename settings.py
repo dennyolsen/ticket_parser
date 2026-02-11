@@ -1,0 +1,2 @@
+login_URL = "https://nederland.eforcesoftware.net/eFORCECommand/Account/Login.aspx?redirect=/eforcecommand/"
+firefox_binary = r'C:\Program Files\WindowsApps\Mozilla.Firefox_147.0.3.0_x64__n80bbvh6b1yt2\VFS\ProgramFiles\Firefox Package Root\firefox.exe'
