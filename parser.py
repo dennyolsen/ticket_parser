@@ -107,7 +107,7 @@ def parse_tickets():
                     if x == 248.0 and y == 678.4757000000001:
                         phone = text.split('\n')[1]
                         if phone == "NA":
-                            phone = 0000000000
+                            phone = "0000000000"
                         continue
                     if x == 5.0 and y == 490.36870000000005:
                         location = str.lstrip(text).replace('\n', '')
