@@ -10,6 +10,8 @@ from pdfminer.converter import PDFPageAggregator
 from pprint import pprint
 import os
 import sys
+import csv
+import datetime
 
 debug = True
 report = True # for CSV report
@@ -128,5 +130,12 @@ def parse_tickets():
             tickets_data.append(ticket_fields)
     return tickets_data
 
-if debug:
-    pprint(parse_tickets())
+parsed_tickets = parse_tickets()
+pprint(parse_tickets)
+
+with open('report' + str(datetime.datetime.now()) + ".csv", 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter=',',
+                            quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    csvwriter.writerow(["lastname", "firstname", "citation", "dob", "address", "city", "state", "zip", "dl", "dlState", "phone", "location", "date", "statute", "description", "ethnicity"])
+    for ticket in parsed_tickets:
+        csvwriter.writerow(ticket)
