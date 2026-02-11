@@ -1,3 +1,7 @@
+# TOWN OF NEDERLAND TICKET PARSER
+# Copyright (c) 2025-2026 Dennis Olsen, Grace Gude
+# License: MIT
+
 # Usage: python driver.py [directory to be scanned]
 
 from selenium import webdriver
